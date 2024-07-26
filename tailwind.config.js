@@ -1,38 +1,36 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const plugin = require("tailwindcss/plugin");
+
+module.exports = {
   content: ["./index.html", "./main.js"],
   theme: {
     extend: {
       screens: {
-        xs: "425px"
+        xs: "425px",
       },
-      // Some Extended Colors for your custom theme
       colors: {
         bkg: "#171819",
         muted: "#C9CBCF",
-        accent: "#66ccc1",
+        accent: "#66CCC1",
       },
       dropShadow: {
         "text-sm": "1px 1px 0px rgba(0, 0, 0, 0.90)",
         "text-md": "1px 2px 0px rgba(0, 0, 0, 0.90)",
         "text-lg": "1px 4px 0px rgba(0, 0, 0, 0.90)",
       },
-      // Some default container properties
       container: {
         center: true,
         padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
-          lg: '4rem',
-          xl: '5rem',
-          '2xl': '6rem',
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
         },
       },
       fontFamily: {
         sans: ["Outfit", "sans-serif"],
       },
-      // from https://utopia.fyi/
-      // Elegantly scale type and space without breakpoints
       fontSize: {
         sm: ["clamp(1.00rem, calc(0.92rem + 0.39vw), 1.20rem)", "1.4"],
         base: ["clamp(1.13rem, calc(0.98rem + 0.73vw), 1.50rem)", "1.5"],
@@ -46,5 +44,20 @@ export default {
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    plugin(( { addUtilities, theme }) => {
+      addUtilities({
+        ".fade-up": {
+          transition:
+            "transform 1s cubic-bezier(0.64, 0.04, 0.26, 0.87), opacity 0.8s cubic-bezier(0.64, 0.04, 0.26, 0.87)",
+          opacity: theme("opacity.0"),
+          transform: "translate3d(0, 2rem, 0)",
+        },
+        ".faded": {
+          opacity: theme("opacity.100"),
+          transform: "translate3d(0, 0, 0)",
+        },
+      });
+    })
+  ],
+};
