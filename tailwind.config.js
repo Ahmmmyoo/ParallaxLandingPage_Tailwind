@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./main.js"],
   theme: {
     extend: {
+      screens: {
+        xs: "425px"
+      },
       // Some Extended Colors for your custom theme
       colors: {
         bkg: "#171819",
