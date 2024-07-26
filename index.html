@@ -2,18 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Page Title -->
-    <title>Traverse Landing Page</title>
-    <!-- Some kind of Scheme? -->
-    <meta name="color-scheme" content="dark" />
-    <!-- Page Icon -->
     <link rel="icon" type="image/svg+xml" href="./images/logomark.svg" />
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Traverse Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -22,17 +18,17 @@
   >
     <div id="parallax">
       <nav
-        class="grid place-items-center absolute w-full z-50 drop-shadow-text-sm"
+        class="grid place-items-center absolute w-full top-0 z-50 drop-shadow-text-sm"
         aria-label="Primary Navigation"
       >
         <a
           href="/"
           aria-label="Go Home"
-          class="p-1 m-4 focus:outline-none focus-visible:ring-4 focus-visible:ring-accent rounded-full transition-shadow"
+          class="p-1 m-4 focus:outline-none focus-visible:ring-4 ring-accent rounded-full transition-shadow"
         >
           <svg
-            class="w-32 sm:w-48 lg:w-56"
             width="280"
+            class="w-32 sm:w-48 lg:w-56"
             viewBox="0 0 357 86"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,23 +58,21 @@
             ./images/hero-lg.jpg 1300w
           "
           class="absolute h-full w-full -z-20 object-cover object-center"
-          src="/images/hero.jpg"
+          src="./images/hero.jpg"
           aria-hidden="true"
         />
         <h1
-          class="text-5xl text-center font-bold text-white tracking-wide py-12 drop-shadow-text-sm md:drop-shadow-text-md lg:drop-shadow-text-lg"
+          class="text-5xl text-center font-bold text-white tracking-wide py-12 drop-shadow-text-sm lg:drop-shadow-text-lg"
         >
-          Unique Trips for
-          <br />
+          Unique Trips for<br />
           Adventurous <br />
           Travelers
         </h1>
         <a
-          class="bg-accent text-bkg font-medium py-3 px-8 rounded-full border border-bkg focus:outline-none focus-visible:ring-4 ring-accent ring-offset-bkg ring-offset-2 hover:bg-accent/90 flex space-x-2 drop-shadow-text-lg hover:drop-shadow-none transition-shadow items-center"
           href="#contact-form"
+          class="bg-accent text-bkg font-medium py-3 px-8 rounded-full border border-bkg focus:outline-none focus-visible:ring-4 ring-accent ring-offset-bkg ring-offset-2 hover:bg-accent/90 flex items-center space-x-2 drop-shadow-text-lg hover:drop-shadow-none transition-shadow"
         >
           <span class="uppercase tracking-wide">Book a Trip</span>
-          <!-- Map Icon from https://phosphoricons.com/ -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -86,37 +80,31 @@
             fill="currentColor"
             viewBox="0 0 256 256"
           >
-            <rect width="256" height="256" fill="none" />
-            <line
-              x1="96"
-              y1="184"
-              x2="96"
-              y2="40"
+            <rect width="256" height="256" fill="none"></rect>
+            <polyline
+              points="96 184 32 200 32 56 96 40"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="24"
-            />
-            <line
-              x1="160"
-              y1="72"
-              x2="160"
-              y2="216"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
-            />
+            ></polyline>
             <polygon
-              points="96 184 32 200 32 56 96 40 160 72 224 56 224 200 160 216 96 184"
+              points="160 216 96 184 96 40 160 72 160 216"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="24"
-            />
+            ></polygon>
+            <polyline
+              points="160 72 224 56 224 200 160 216"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></polyline>
           </svg>
         </a>
       </header>
@@ -124,7 +112,7 @@
         class="relative mt-16 sm:mt-24 lg:mt-40 pb-16 -mb-16 grid gap-16 sm:gap-24 lg:gap-40 overflow-hidden"
       >
         <section
-          aria-label="headline"
+          aria-labelledby="headline"
           class="container grid gap-4 text-center max-w-prose"
         >
           <div>
@@ -146,7 +134,7 @@
           </p>
         </section>
         <section
-          aria-label="slider"
+          aria-labelledby="slider"
           class="container grid gap-4 text-center sm:text-left"
         >
           <div class="relative">
@@ -177,19 +165,18 @@
                   data-slideBtn
                   id="prev"
                   aria-label="show previous image"
-                  disabled
                   class="grid place-items-center bg-accent hover:bg-accent/90 rounded-full p-2 text-bkg focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg ring-accent disabled:bg-accent/20 disabled:text-accent"
+                  disabled
                 >
-                  <!-- PhosphorIcons SVG -->
                   <svg
-                    class="pointer-events-none"
                     xmlns="http://www.w3.org/2000/svg"
                     width="36"
                     height="36"
+                    class="pointer-events-none"
                     fill="currentColor"
                     viewBox="0 0 256 256"
                   >
-                    <rect width="256" height="256" fill="none" />
+                    <rect width="256" height="256" fill="none"></rect>
                     <circle
                       cx="128"
                       cy="128"
@@ -199,44 +186,43 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="24"
-                    />
+                    ></circle>
+                    <polyline
+                      points="121.9 161.9 88 128 121.9 94.1"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="24"
+                    ></polyline>
                     <line
-                      x1="88"
+                      x1="168"
                       y1="128"
-                      x2="168"
+                      x2="88"
                       y2="128"
                       fill="none"
                       stroke="currentColor"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="24"
-                    />
-                    <polyline
-                      points="120 96 88 128 120 160"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="24"
-                    />
+                    ></line>
                   </svg>
                 </button>
                 <button
                   data-slideBtn
-                  id="prev"
+                  id="next"
                   aria-label="show next image"
                   class="grid place-items-center bg-accent hover:bg-accent/90 rounded-full p-2 text-bkg focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg ring-accent disabled:bg-accent/20 disabled:text-accent"
                 >
-                  <!-- PhosphorIcons SVG -->
                   <svg
-                    class="pointer-events-none"
                     xmlns="http://www.w3.org/2000/svg"
                     width="36"
                     height="36"
+                    class="pointer-events-none"
                     fill="currentColor"
                     viewBox="0 0 256 256"
                   >
-                    <rect width="256" height="256" fill="none" />
+                    <rect width="256" height="256" fill="none"></rect>
                     <circle
                       cx="128"
                       cy="128"
@@ -246,7 +232,15 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="24"
-                    />
+                    ></circle>
+                    <polyline
+                      points="134.1 161.9 168 128 134.1 94.1"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="24"
+                    ></polyline>
                     <line
                       x1="88"
                       y1="128"
@@ -257,15 +251,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="24"
-                    />
-                    <polyline
-                      points="136 96 168 128 136 160"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="24"
-                    />
+                    ></line>
                   </svg>
                 </button>
               </div>
@@ -282,6 +268,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-1.jpg"
                 alt="Iceland Scene"
@@ -297,6 +284,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-2.jpg"
                 alt="Iceland Scene"
@@ -312,6 +300,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-3.jpg"
                 alt="Iceland Scene"
@@ -327,6 +316,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-4.jpg"
                 alt="Iceland Scene"
@@ -342,6 +332,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-5.jpg"
                 alt="Iceland Scene"
@@ -357,6 +348,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-6.jpg"
                 alt="Iceland Scene"
@@ -372,6 +364,7 @@
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-7.jpg"
                 alt="Iceland Scene"
@@ -383,10 +376,11 @@
               </p>
             </div>
             <div
-              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96"
               data-slide
             >
               <img
+                loading="lazy"
                 class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
                 src="./images/slider-8.jpg"
                 alt="Iceland Scene"
