@@ -2,3 +2,4 @@
 A Landing Page (with Parallax)
 
 Hosted on (Vercel)[https://parallaxlandingpage-ahmmmyoos-projects.vercel.app/]
+Hosted on (Netlify)[https://parallax-landing-page-demo.netlify.app/]
